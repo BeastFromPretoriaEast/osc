@@ -12,7 +12,7 @@
                 </p>
             </div>
 
-            <form id="login-form" method="POST" action="{{ route('password.email') }}" class="space-y-5">
+            <form id="login-form" method="POST" action="{{ route('password.email') }}" class="space-y-7">
                 @csrf
 
                 <div>
