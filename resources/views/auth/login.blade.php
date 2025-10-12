@@ -17,7 +17,9 @@
                     <label for="email" class="block text-sm font-medium text-[#565656]">Email</label>
                     <div class="input-with-icon mt-1">
                         <span class="icon-box at-symbol">@</span>
-                        <input id="email" type="email" name="email" required autofocus autocomplete="username" inputmode="email" value="{{ old('email') }}" placeholder="Email Address..." autocapitalize="none" spellcheck="false"
+                        <input id="email" type="email" name="email" required autofocus autocomplete="username"
+                               inputmode="email" value="{{ old('email') }}" placeholder="Email Address..."
+                               autocapitalize="none" spellcheck="false"
                                class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]"
                         />
                     </div>
@@ -35,14 +37,19 @@
                     </div>
                     <div class="input-with-icon mt-1 relative">
                         <span class="icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#565656]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#565656]" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                      d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"/>
                             </svg>
                         </span>
-                        <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="Password..."
+                        <input id="password" type="password" name="password" required autocomplete="current-password"
+                               placeholder="Password..."
                                class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 pr-12 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]"
                         />
-                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md text-[#565656] hover:text-[#8a2334] text-sm" aria-label="Show password">
+                        <button type="button" id="togglePassword"
+                                class="absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md text-[#565656] hover:text-[#8a2334] text-sm"
+                                aria-label="Show password">
                             Show
                         </button>
                     </div>
@@ -60,7 +67,8 @@
 
                 <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
-                <button type="submit" class="btn-animated w-full py-2.5 px-4 rounded-xl font-semibold text-white shadow active:scale-[0.99] transition">
+                <button type="submit"
+                        class="btn-animated w-full py-2.5 px-4 rounded-xl font-semibold text-white shadow active:scale-[0.99] transition">
                     Sign in
                 </button>
 
