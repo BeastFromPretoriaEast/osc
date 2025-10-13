@@ -1,13 +1,16 @@
-// Password toggle
+// Password toggles (supports multiple fields)
 (function () {
-    const input = document.getElementById('password');
-    const btn = document.getElementById('togglePassword');
-    if (!input || !btn) return;
-    btn.addEventListener('click', () => {
-        const isPw = input.type === 'password';
-        input.type = isPw ? 'text' : 'password';
-        btn.textContent = isPw ? 'Hide' : 'Show';
-        btn.setAttribute('aria-label', isPw ? 'Hide password' : 'Show password');
+    document.querySelectorAll('.toggle-password').forEach(btn => {
+        const targetId = btn.getAttribute('aria-controls');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+
+        btn.addEventListener('click', () => {
+            const isPw = input.type === 'password';
+            input.type = isPw ? 'text' : 'password';
+            btn.textContent = isPw ? 'Hide' : 'Show';
+            btn.setAttribute('aria-label', isPw ? 'Hide password' : 'Show password');
+        });
     });
 })();
 

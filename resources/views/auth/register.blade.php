@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Our Smart Community - Login')
+@section('title', 'Our Smart Community - Registration')
 
 @section('content')
     <div class="relative w-full max-w-md glass glass-deep rounded-2xl p-1">
@@ -68,16 +68,19 @@
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium">Password</label>
                     </div>
+                    {{-- Password --}}
                     <div class="input-with-icon mt-1 relative">
                         <span class="icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#565656]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"></path>
                             </svg>
                         </span>
-                        <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="Password..."
-                               class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 pr-12 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]"
-                        />
-                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md  hover:text-[#8a2334] text-sm">
+                        <input id="password" type="password" name="password" required autocomplete="new-password"
+                               placeholder="Password..."
+                               class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 pr-12 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]" />
+                        <button type="button"
+                                class="toggle-password absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md hover:text-[#8a2334] text-sm"
+                                aria-controls="password" aria-label="Show password">
                             Show
                         </button>
                     </div>
@@ -92,18 +95,23 @@
                             Password Confirm
                         </label>
                     </div>
+                    {{-- Password Confirm --}}
                     <div class="input-with-icon mt-1 relative">
                         <span class="icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#565656]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6-6v6a2 2 0 002 2h8a2 2 0 002-2v-6m-2-4a4 4 0 00-8 0v4h8v-4z"></path>
                             </svg>
                         </span>
-                        <input id="passwordConfirm" type="password" name="password_confirm" required autocomplete="password_confirm" placeholder="Password Confirm..." class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 pr-12 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]"/>
-                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md  hover:text-[#8a2334] text-sm" aria-label="Show password">
+                        <input id="passwordConfirm" type="password" name="password_confirm" required autocomplete="new-password"
+                               placeholder="Password Confirm..."
+                               class="block w-full rounded-xl border border-[#565656]/30 bg-white/70 pr-12 px-3 py-2 shadow-sm focus:border-[#8a2334] focus:ring focus:ring-[#8a2334]/20 transition placeholder-[#dcdcdc]" />
+                        <button type="button"
+                                class="toggle-password absolute inset-y-0 right-2 my-auto h-8 px-2 rounded-md hover:text-[#8a2334] text-sm"
+                                aria-controls="passwordConfirm" aria-label="Show password">
                             Show
                         </button>
                     </div>
-                    @error('password')
+                    @error('password_confirm')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
