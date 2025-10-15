@@ -28,8 +28,15 @@
             <img src="{{ asset('images/osc-logo.svg') }}" alt="OSC Logo" class="h-10 w-auto">
         </a>
         <nav class="hidden sm:flex gap-4 text-sm">
-            <a href="#" class="text-[#565656]/85 hover:text-[#8a2334] transition">Help</a>
-            <a href="#" class="text-[#565656]/85 hover:text-[#8a2334] transition">Contact</a>
+            @auth
+                <a href="{{ url('/dashboard') }}" class="footer-link text-[#565656]/85">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}" class="footer-link text-[#565656]/85 mt-2">Log in</a>
+
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="footer-link text-[#565656]/85 mt-2">Register</a>
+                @endif
+            @endauth
         </nav>
     </div>
 </header>
